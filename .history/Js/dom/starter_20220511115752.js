@@ -1,5 +1,0 @@
-// Viết 1 function tạo ra thông báo
-const noti = document.createElement("div");
-noti.classList.add("noti");
-
-function createNotification() {}
