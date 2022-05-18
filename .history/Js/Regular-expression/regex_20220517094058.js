@@ -1,0 +1,4 @@
+// Regular expression: Biểu thức chính quy
+// 1. 2 cách khai báo với Regex
+const reg1 = /hello/;
+const reg2 = new RegExp("hello");

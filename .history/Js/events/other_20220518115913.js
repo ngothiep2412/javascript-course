@@ -1,0 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("loaded");
+});
+const p = document.querySelector("p");
+console.log(p);
+// Nếu để đưa thẻ script lên trước thì nó sẽ bị blocking page
+// dùng defer: non-blocking page
+// async: ko bị blocking page, bất đồng bộ. Dùng trong trường hợp ở bên thứ 3
