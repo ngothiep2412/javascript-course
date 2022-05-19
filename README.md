@@ -8,6 +8,6 @@
 
 ### Screen shot
 
-![Source code](https://github.com/NgoThiep2412/javascript-course/tree/master/images)
+![Source code](https://github.com/NgoThiep2412/javascript-course/blob/master/images/images.png)
 
 #### @ThiepNX 2022
