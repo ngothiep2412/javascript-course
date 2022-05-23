@@ -208,3 +208,23 @@ body {
   border: 0;
   font-size: 18px;
 }
+
+.boxedex {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background-clip: padding-box;
+  border: 10px solid #293462;
+  border-radius: 20px;
+  display: block;
+  margin: 25px auto;
+}
+.boxedex:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -10px;
+  background-image: linear-gradient(to right top, #f24c4c, #ec9b3b);
+  border-radius: inherit;
+}
