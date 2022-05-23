@@ -20,16 +20,6 @@
       "bestSeller": true,
       "buyAmount": 1000,
       "id": 4
-    },
-    {
-      "image": "",
-      "title": "",
-      "author": "",
-      "rating": 0,
-      "price": 0,
-      "bestSeller": false,
-      "buyAmount": 0,
-      "id": 5
     }
   ],
   "comments": [],
