@@ -3,7 +3,39 @@ const endpoint = "http://localhost:3456/courses";
 const courseList = document.querySelector(".course-list");
 const formPost = document.querySelector(".form-post");
 const formSubmit = document.querySelector(".form-submit");
+const filterInput = document.querySelector(".filter");
 let updateId = null;
+
+function debounceFn(func, wait, immediate) {
+  let timeout;
+  return function () {
+    let context = this,
+      args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+filterInput.addEventListener(
+  "keydown",
+  debounceFn(function (e) {
+    let path = endpoint;
+    if (e.target.value !== "") {
+      path = `${endpoint}?title_like=${e.target.value}`;
+    }
+    getCourses(path);
+    // const response = await fetch(`${endpoint}?title_like=${e.target.value}`);
+    // const data = await response.json();
+    // console.log(data);
+  }, 500)
+);
+
 async function addNewCourse({
   image,
   title,
@@ -97,8 +129,9 @@ function readItem(item) {
   courseList.insertAdjacentHTML("beforeend", template);
 }
 
-async function getCourses() {
-  const response = await fetch(endpoint);
+async function getCourses(link = endpoint) {
+  const response = await fetch(link);
+  console.log(response);
   const data = await response.json();
   courseList.innerHTML = "";
   if (data.length > 0 && Array.isArray(data)) {
