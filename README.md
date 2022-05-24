@@ -15,4 +15,4 @@
 
 ![Source code](https://github.com/NgoThiep2412/javascript-course/blob/master/images/images.png)
 
-#### @ThiepNX 2022
+#### ©ThiepNX 2022
